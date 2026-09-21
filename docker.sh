@@ -21,12 +21,13 @@ EOF
 
 yes Y | sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-sudo systemctl start docker
-
 sudo groupadd docker
 
 sudo usermod -aG docker $USER
 
 newgrp docker
 
-docker run hello-world
+sudo systemctl start docker
+
+sudo systemctl enable docker
+
